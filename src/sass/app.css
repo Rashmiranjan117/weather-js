@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;1,500;1,700&family=Poppins:wght@300;600&display=swap");
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  font-family: "Poppins", "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.App {
+  background: #E6DADA; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 100vh;
+  max-width: 100%;
+  color: white;
+  padding: 3rem;
+}/*# sourceMappingURL=app.css.map */
