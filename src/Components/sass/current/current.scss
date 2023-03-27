@@ -1,0 +1,18 @@
+#gmap_canvas{
+    width: 90%;
+    height: 300px;
+    margin: 0;
+    border: 0;
+    background: none !important;
+    border-radius: 12px;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    width: 80%;
+    box-sizing: border-box;
+    object-fit: contain;
+}
