@@ -49,9 +49,9 @@ const Home = () => {
 
   return (
     <>
-    <div className="inputs">
-    <input type="search" placeholder="Enter a city name" />
-    </div>
+      <div className="inputs">
+        <input type="search" placeholder="Enter a city name" />
+      </div>
       <div className="home">
         <div className="details">
           <div className="main_details">
@@ -92,6 +92,7 @@ const Home = () => {
           <RenderCurrent name={data?.name} />
         </div>
       </div>
+      <div className="week"></div>
     </>
   );
 };
