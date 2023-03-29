@@ -6,6 +6,8 @@ import {
   getData,
   WeatherData,
 } from "../Hooks/getCurrentLocation";
+
+import { getData as getWeekData, DayData ,WeekData2} from "../Hooks/getWeekly";
 import "./sass/styles.css";
 
 import { BsSunrise } from "react-icons/bs";
@@ -17,6 +19,45 @@ interface Location {
   lon: number | null;
 }
 
+interface DailyData {
+  clouds: number;
+  dew_point: number;
+  dt: number;
+  feels_like: {
+    day: number;
+    eve: number;
+    morn: number;
+    night: number;
+  };
+  humidity: number;
+  moon_phase: number;
+  moonrise: number;
+  moonset: number;
+  pop: number;
+  pressure: number;
+  sunrise: number;
+  sunset: number;
+  temp: {
+    day: number;
+    eve: number;
+    max: number;
+    min: number;
+    morn: number;
+    night: number;
+  };
+  uvi: number;
+  weather: {
+    description: string;
+    icon: string;
+    id: number;
+    main: string;
+  }[];
+  wind_deg: number;
+  wind_gust: number;
+  wind_speed: number;
+}
+
+
 const Home = () => {
   const [query, setQuery] = useState<string>("");
   const [defaultCoords, setDefaultCoords] = useState<Location>({
@@ -25,6 +66,8 @@ const Home = () => {
   });
 
   const [data, setData] = useState<WeatherData | null>(null);
+  const [weekly, setWeekly] = useState<WeekData2 | null>(null);
+  const [date, setDate] = useState<string[]>([]);
 
   const handleCurrent = () => {
     getCurrentLocation()
@@ -33,6 +76,16 @@ const Home = () => {
         getData(res.lat, res.lon).then((res) => {
           setData(res);
         });
+        handleWeekly(res.lat, res.lon);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
+  const handleWeekly = (lat: number, lon: number) => {
+    getWeekData(lat, lon)
+      .then((res) => {
+        setWeekly(res);
       })
       .catch((err) => {
         console.warn(err);
@@ -42,7 +95,7 @@ const Home = () => {
   useEffect(() => {
     handleCurrent();
   }, []);
-  console.log(data);
+  console.log(weekly);
   if (data === null) {
     return <h1>Loading...</h1>;
   }
@@ -92,7 +145,7 @@ const Home = () => {
           <RenderCurrent name={data?.name} />
         </div>
       </div>
-      <div className="week"></div>
+      <div className="week">{/* {weekly?.daily?.map(())} */}</div>
     </>
   );
 };
