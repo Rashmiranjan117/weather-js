@@ -39,7 +39,27 @@ export interface DayData {
 }
 
 export interface WeekData2 {
-  current: {};
+  current: {
+    clouds: number;
+    dew_point: number;
+    dt: number;
+    feels_like: number;
+    humidity: number;
+    pressure: number;
+    sunrise: number;
+    sunset: number;
+    temp: number;
+    uvi: number;
+    weather: {
+      id: number;
+      description: string;
+      icon: string;
+      main: string;
+    }[];
+    wind_deg: number;
+    wind_gust: number;
+    wind_speed: number;
+  };
   daily: DayData[];
   hourly: any[];
   lat: number;

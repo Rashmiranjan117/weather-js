@@ -3,11 +3,11 @@ import CurrentLocation from "../Components/CurrentLocation";
 import RenderCurrent from "../Components/RenderCurrent";
 import {
   getCurrentLocation,
-  getData,
+  getData as getDayData,
   WeatherData,
 } from "../Hooks/getCurrentLocation";
 
-import { getData as getWeekData, DayData ,WeekData2} from "../Hooks/getWeekly";
+import { getData as getWeekData, DayData, WeekData2 } from "../Hooks/getWeekly";
 import "./sass/styles.css";
 
 import { BsSunrise } from "react-icons/bs";
@@ -57,7 +57,6 @@ interface DailyData {
   wind_speed: number;
 }
 
-
 const Home = () => {
   const [query, setQuery] = useState<string>("");
   const [defaultCoords, setDefaultCoords] = useState<Location>({
@@ -73,7 +72,7 @@ const Home = () => {
     getCurrentLocation()
       .then((res) => {
         setDefaultCoords({ ...defaultCoords, lat: res.lat, lon: res.lon });
-        getData(res.lat, res.lon).then((res) => {
+        getDayData(res.lat, res.lon).then((res) => {
           setData(res);
         });
         handleWeekly(res.lat, res.lon);
@@ -117,6 +116,7 @@ const Home = () => {
             <img
               src={`http://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`}
               alt="weather_icon"
+              loading="lazy"
             />
             <p>{data?.weather[0]?.description.toLocaleUpperCase()}</p>
           </div>
@@ -145,7 +145,23 @@ const Home = () => {
           <RenderCurrent name={data?.name} />
         </div>
       </div>
-      <div className="week">{/* {weekly?.daily?.map(())} */}</div>
+      <div className="week">
+        {weekly &&
+          weekly?.daily?.map((el, i) => {
+            return (
+              <div key={i} className="week-card">
+                <p>Date : {new Date(el?.dt * 1000).toLocaleDateString()}</p>
+                <img
+                  src={`http://openweathermap.org/img/wn/${el?.weather[0]?.icon}@2x.png`}
+                  alt="weather_icon"
+                  loading="lazy"
+                />
+                <p>Max : {el?.temp?.max}</p>
+                <p>Min : {el?.temp?.min}</p>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 };
