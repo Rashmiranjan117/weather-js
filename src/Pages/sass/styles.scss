@@ -37,11 +37,18 @@
     & > .map{
         width: 100%;
     }
+
+    
 }
 
 .inputs{
     text-align: center;
-    & input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid white;
+    & input,
+    button{
         padding: 5px;
         text-align: center;
         border: 0;
@@ -52,7 +59,19 @@
         font-size: 1rem;
         transition: 0.5s;
     }
+   & .btn{
+        padding: 5px 10px;
+        margin: 2px;
+    }
+    & button:hover{
+        cursor: pointer;
+    }
+    
+    input{
+        margin-right: 1rem;
+    }
 }
+
 
 .week{
     display: flex;
@@ -64,5 +83,17 @@
         padding: 1rem;
         border-radius: 12px;
         text-align: center;
+    }
+}
+
+@media all and (max-width:780px) and (min-width:450px){
+    .home{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        // border: 1px solid red;
+       justify-content: center;
+       align-items: center;
     }
 }
