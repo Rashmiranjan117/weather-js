@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-content: space-around;
+    overflow: scroll;
     padding: 3rem;
     gap: 2rem;
     & > .details{
@@ -95,5 +96,60 @@
         // border: 1px solid red;
        justify-content: center;
        align-items: center;
+    }
+    .map{
+       margin: auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    }
+    #gmap_canvas,
+    .gmap_canvas,
+    .mapouter,
+    .current{
+        width: 100%;
+    }
+
+    .week{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+    }
+}
+
+@media all and (max-width:449px) and (min-width:100px){
+    .home{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+       justify-content: center;
+       align-items: center;
+    }
+    .map{
+       margin: auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    }
+    #gmap_canvas,
+    .gmap_canvas,
+    .mapouter,
+    .current{
+        width: 100%;
+    }
+    .week{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        & .week-card{
+            width: 80%;
+        }
     }
 }

@@ -142,6 +142,7 @@ const Home = () => {
 
   return (
     <>
+      <h2>WeatherWizard</h2>
       <div className="inputs">
         <input
           type="search"
