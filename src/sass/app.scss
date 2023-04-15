@@ -7,7 +7,7 @@
     font-family: 'Poppins', 'Montserrat',sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    // overflow: hidden;
     scroll-behavior: smooth;
 }
 .App{
@@ -19,4 +19,9 @@ max-width: 100%;
 color: white;
 padding: 3rem;
 overflow: scroll;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 1rem;
 }
