@@ -13,3 +13,7 @@
 
 ## ScreenShot:
 ![weatherwizard](https://user-images.githubusercontent.com/107473816/232194328-7c9e4f2e-586d-4f25-9080-c801e5364c50.jpg)
+
+## Features Implemented:
+* Geolocation
+* Media Queries
