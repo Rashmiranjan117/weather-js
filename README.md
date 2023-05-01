@@ -1,5 +1,5 @@
 # WeatherWise
- Introducing WeatherWise, your go-to weather companion! Powered by TypeScript, WeatherWise provides accurate and up-to-date weather forecasts for your location and beyond. With its user-friendly interface and sleek design, you can easily check current weather conditions, view hourly and daily forecasts, and track weather changes in real-time. Stay prepared with WeatherWise's detailed weather data, including temperature, humidity, precipitation, wind speed, and more. Download WeatherWise today and stay ahead of the weather!
+ Introducing WeatherWise, your go-to weather companion! Powered by TypeScript, WeatherWise provides accurate and up-to-date weather forecasts for your location and beyond. With its user-friendly interface and sleek design, you can easily check current weather conditions, view hourly and daily forecasts, and track weather changes in real-time. Stay prepared with WeatherWise's detailed weather data, including temperature, humidity, precipitation, wind speed, and more. Visit WeatherWise today and stay ahead of the weather!
 
 ## Technologies used in the project:
 
